@@ -1,11 +1,12 @@
-FROM python:3.7-buster 
+FROM docker/compose:latest
 
 LABEL maintainer mahfuz.sust001@gmail.com
 
-RUN pip install --no-cache-dir -U pip
-RUN pip install --no-cache-dir virtualenv
-RUN pip install --no-cache-dir zappa
-RUN pip install --no-cache-dir awscli
-RUN pip install --no-cache-dir yasha
+RUN apk add --no-cache --virtual .build-deps g++ python3-dev libffi-dev openssl-dev && \
+    apk add --no-cache --update python3
 
-CMD ["/bin/bash"]
+RUN pip3 install --no-cache-dir -U pip
+RUN pip3 install --no-cache-dir virtualenv
+RUN pip3 install --no-cache-dir zappa
+RUN pip3 install --no-cache-dir awscli
+RUN pip3 install --no-cache-dir yasha
