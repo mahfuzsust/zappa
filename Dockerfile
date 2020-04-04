@@ -10,8 +10,11 @@ RUN apk add --no-cache --virtual .build-deps \
     postgresql-dev \
     && apk add --no-cache --update python3
 
-RUN pip3 install --no-cache-dir -U pip
-RUN pip3 install --no-cache-dir virtualenv
-RUN pip3 install --no-cache-dir zappa
-RUN pip3 install --no-cache-dir awscli
-RUN pip3 install --no-cache-dir yasha
+ENV PIP_DISABLE_PIP_VERSION_CHECK=1
+ENV PIP_NO_CACHE_DIR=1
+
+RUN pip install -U pip
+RUN pip install virtualenv
+RUN pip install zappa
+RUN pip install awscli
+RUN pip install yasha
