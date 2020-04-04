@@ -13,8 +13,10 @@ RUN apk add --no-cache --virtual .build-deps \
 ENV PIP_DISABLE_PIP_VERSION_CHECK=1
 ENV PIP_NO_CACHE_DIR=1
 
-RUN pip install -U pip
-RUN pip install virtualenv
-RUN pip install zappa
-RUN pip install awscli
-RUN pip install yasha
+
+RUN pip3 install -U pip
+RUN pip3 install virtualenv
+RUN pip3 install zappa	
+RUN pip3 install awscli
+RUN pip3 install yash
+
