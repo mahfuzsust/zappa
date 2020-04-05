@@ -18,5 +18,5 @@ RUN pip3 install -U pip
 RUN pip3 install virtualenv
 RUN pip3 install zappa	
 RUN pip3 install awscli
-RUN pip3 install yash
+RUN pip3 install yasha
 
