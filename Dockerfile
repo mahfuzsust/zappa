@@ -1,25 +1,14 @@
-FROM docker/compose:latest
+FROM python:3.8-buster
 
 LABEL maintainer mahfuz.sust001@gmail.com
 
-RUN apk add --no-cache --virtual .build-deps \
-    g++ python3-dev \ 
-    libffi-dev \ 
-    openssl-dev \
-    gcc \
-    libc-dev \
-    make \
-    musl-dev \
-    postgresql-dev \
-    && apk add --no-cache --update python3
+RUN apt update
+RUN apt install docker.io -y
+RUN curl -L "https://github.com/docker/compose/releases/download/1.26.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+RUN chmod +x /usr/local/bin/docker-compose
 
-ENV PIP_DISABLE_PIP_VERSION_CHECK=1
-ENV PIP_NO_CACHE_DIR=1
-
-
-RUN pip3 install -U pip
-RUN pip3 install virtualenv
-RUN pip3 install zappa	
-RUN pip3 install awscli
-RUN pip3 install yasha
-
+RUN pip install -U pip
+RUN pip install virtualenv
+RUN pip install zappa	
+RUN pip install awscli
+RUN pip install yasha
