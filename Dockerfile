@@ -1,4 +1,4 @@
-FROM python:3.8-buster
+FROM python:3.7-buster
 
 LABEL maintainer mahfuz.sust001@gmail.com
 
