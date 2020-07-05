@@ -6,7 +6,7 @@ RUN apt update
 RUN apt install docker.io -y
 RUN curl -L "https://github.com/docker/compose/releases/download/1.26.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 RUN chmod +x /usr/local/bin/docker-compose
-RUN apt install postgresql postgresql-contrib
+RUN apt install postgresql postgresql-contrib -y
 
 RUN pip install -U pip
 RUN pip install --upgrade setuptools
