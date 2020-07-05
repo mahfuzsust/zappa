@@ -8,6 +8,7 @@ RUN curl -L "https://github.com/docker/compose/releases/download/1.26.2/docker-c
 RUN chmod +x /usr/local/bin/docker-compose
 
 RUN pip install -U pip
+RUN pip install --upgrade setuptools
 RUN pip install virtualenv
 RUN pip install zappa	
 RUN pip install awscli
