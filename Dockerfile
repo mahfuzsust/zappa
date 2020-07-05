@@ -6,6 +6,9 @@ RUN apk add --no-cache --virtual .build-deps \
     g++ python3-dev \ 
     libffi-dev \ 
     openssl-dev \
+    gcc \
+    libc-dev \
+    make \
     musl-dev \
     postgresql-dev \
     && apk add --no-cache --update python3
