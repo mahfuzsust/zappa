@@ -9,6 +9,7 @@ RUN chmod +x /usr/local/bin/docker-compose
 RUN apt install build-essential -y
 RUN apt install g++ gcc python3-dev libffi-dev libpq-dev libc-dev make musl-dev libssl-dev -y
 RUN apt install postgresql postgresql-contrib -y
+RUN apt install unixodbc-dev -y
 
 RUN pip install -U pip
 RUN pip install --upgrade setuptools
